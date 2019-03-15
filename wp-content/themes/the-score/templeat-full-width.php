@@ -29,7 +29,7 @@ Template Name: Full Width Page
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
 				get_template_part( 'template-parts/content', get_post_format() );
-
+				get_post_custom(); 
 			endwhile; ?>
 
 		<?php else :

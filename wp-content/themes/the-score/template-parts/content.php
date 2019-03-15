@@ -19,7 +19,7 @@ if( ! defined( 'ABSPATH' ) ) {
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
-
+		
 		if ( 'post' === get_post_type() ) :
 			?>
 			<div class="entry-meta">
@@ -29,16 +29,16 @@ if( ! defined( 'ABSPATH' ) ) {
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
+		<p class="oeuvre-technologies"> Languages : <?php echo get_post_meta(get_the_ID(),'technologies',true); ?></p>
 	</header><!-- .entry-header -->
 	<?php if ( (is_front_page() || is_home() || is_category() || is_archive() || is_page_template('template-blog.php')) and (!is_page_template( 'templeat-full-width.php'))) : ?>
- 
 		<?php if ( has_post_thumbnail() ) { ?>
 		<a class="app-img-effect" href="<?php the_permalink(); ?>">	
 			<div class="app-first">
 				<div class="app-sub">
 					<div class="app-basic">
 
-						<?php the_post_thumbnail( 'post-thumbnail', array( 'itemprop' => 'image' ) ); ?>		
+						<?php the_post_thumbnail( 'post-thumbnail', array( 'itemprop' => 'image' ) );?>		
 						
 					</div>
 				</div>
@@ -64,7 +64,6 @@ if( ! defined( 'ABSPATH' ) ) {
 			),
 			get_the_title()
 		) );
-
 		wp_link_pages( array(
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'the-score' ),
 			'after'  => '</div>',
@@ -73,6 +72,6 @@ if( ! defined( 'ABSPATH' ) ) {
 	</div><!-- .entry-content -->
 <?php endif; ?>
 	<footer class="entry-footer">
-		<?php the_score_entry_footer(); ?>
+		<?php the_score_entry_footer();?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
