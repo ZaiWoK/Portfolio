@@ -29,7 +29,11 @@ if( ! defined( 'ABSPATH' ) ) {
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
-		<p class="oeuvre-technologies"> Languages : <?php echo get_post_meta(get_the_ID(),'technologies',true); ?></p>
+		<p class="oeuvre-auteur"> Auteurs : <?php echo get_post_meta(get_the_ID(),'auteur',true); ?></p>
+		<p class="oeuvre-date"> Dates : <?php echo get_post_meta(get_the_ID(),'date',true); ?></p>
+		<p class="oeuvre-technologies"> Languages : <?php echo get_post_meta(get_the_ID(),'technologie',true); ?></p>
+		<p class="oeuvre-interoperabilite"> Intéropérabilité : <?php echo get_post_meta(get_the_ID(),'interoperabilite',true); ?></p>
+		
 	</header><!-- .entry-header -->
 	<?php if ( (is_front_page() || is_home() || is_category() || is_archive() || is_page_template('template-blog.php')) and (!is_page_template( 'templeat-full-width.php'))) : ?>
 		<?php if ( has_post_thumbnail() ) { ?>
